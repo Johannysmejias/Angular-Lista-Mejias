@@ -1,0 +1,28 @@
+
+<div class="container-fluid">
+  <h1 class="mb-3">
+    Alumnos
+  </h1>
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre completo</th> 
+        <th>E-mail</th>
+        <th>Edad</th>
+        <th>Fecha de nacimiento</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alumno of alumnos"  [ngClass]="alumno.Top10 ? 'table-success' : ''" >
+        <td>{{alumno.id}}</td>
+        <td>{{alumno.Nombre}} {{alumno.Apellido}}</td>
+        <td>{{alumno.email}}</td>
+        <td>{{alumno.edad}}</td>
+        <td>{{alumno.cumpleanios | date: 'medium' }}</td>
+        <td>{{alumno.curso}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
